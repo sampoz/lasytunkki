@@ -1,5 +1,6 @@
-<<<<<<< HEAD
 # Project plan
+
+Original project by Joonas "Ordith" Palm and Joonas "Zerphed" Nissinen. I am only maintaining this and doing new features
 
 General description of what you are doing and how you are doing that (what kinds of views, models are needed), how they relate to each other, and what is the implementation order and timetable.
 
@@ -130,6 +131,4 @@ We plan to have all of the mandatory functionalities implemented by Friday 1.2.2
 5. Gravatar integration
 6. Basic authentication
 7. Authentication integration with third party software
-=======
-# lasytunkki
->>>>>>> 2b3eb9e6e48b8ac3d0242b95d9b8bb4925ade8db
+
