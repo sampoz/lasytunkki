@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load gravatar %}
+{% block nav-profile %}class="active"{% endblock %}
+
+{% block content %}
+    <div class="panel panel-default">
+        <div class="panel-heading ">
+            <div class="container row">
+                <h3 class="panel-title col-md-10">{{ profile.user }}</h3>
+                <img class="" src="{% gravatar_url profile.email %}">
+            </div>
+            
+        </div>
+        <div class="panel-body">
+            <div class="name"><strong>Nimi:</strong> {{ profile.first_name }} {{ profile.last_name }}</div>
+            <div class="email"><strong>Sähköposti:</strong> {{ profile.email }}</div>
+            <div class="created"><strong>Luotu:</strong> {{ profile.created|date:'Y-m-d H:i' }}</div>
+            <a href="{% url 'edit_profile' %}">
+                <button type="button" class="btn btn-primary">Muokkaa profiilia</button>
+            </a>
+        </div>
+
+    </div>
+{% endblock %}

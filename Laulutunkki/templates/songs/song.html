@@ -1,0 +1,67 @@
+{% extends 'base.html' %}{% load i18n %}
+
+{% block content %}
+    <!-- Song information -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{ song.title }}</h3>
+        </div>
+        <div class="panel-body">
+            <pre>
+                <div class="lyrics">{{ song.lyrics|linebreaks }}</div>
+            </pre>
+
+            {% if song.extra_verses %}
+            <pre>
+                <div class="extra_verses">{{ song.extra_verses|linebreaks }}</div>
+            </pre>
+            {% endif %}
+
+            <div class="melody"><strong>Melodia:</strong> {{ song.melody }}</div>
+            <div class="example"><strong>Esimerkki laulusta:</strong> <a
+                    href="{{ song.example }}">{{ song.example }}</a></div>
+            <div class="other_info"><strong>Muuta tietoa:</strong> {{ song.other_info }}</div>
+            <div class="created"><strong>Luotu:</strong> {{ song.created|date:'Y-m-d H:i' }} / {{ song.author.username }}</div>
+
+            {% if user.is_authenticated %}
+                <a href="{% url "dislike_song" song.pk %}">
+                    <span style="float: right; display: inline; font-size: 2em; margin-left: 0.5em;" class="glyphicon glyphicon-thumbs-down"></span>
+                </a>
+                <a href="{% url "like_song" song.pk %}">
+                    <span style="float: right; display: inline; font-size: 2em;" class="glyphicon glyphicon-thumbs-up"></span>
+                </a>
+                {% if total_likes > -1 %}
+                    <span style="float: right; font-size: 1.5em; margin-right: 1em; color: green;">{{ total_likes }}</span>
+                {% else %}
+                    <span style="float: right; font-size: 1.5em; margin-right: 1em; color: darkred;">{{ total_likes }}</span>
+                {% endif %}
+            {% endif %}
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'edit_song' song.pk %}">
+                   <button type="button" class="btn btn-primary">Muokkaa laulua</button>
+                </a>
+            {% endif %}
+
+            <br>
+            <br>
+            <!-- Facebook share link -->
+            <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=http://lasytunkki.herokuapp.com/song/{{ song.pk }}" target="_blank">
+                Jaa laulu Facebookissa!
+            </a> -->
+            <div class="fb-share-button" data-href="http://lasytunkki.herokuapp.com/song/{{ song.pk }}" data-type="button_count"></div>
+
+            <!-- Comments -->
+            <h4>Kommentit</h4>
+            {% load comments %}
+            {% render_comment_list for song %}
+            {% if user.is_authenticated %}
+                {% render_comment_form for song %}
+            {% else %}
+                <p>
+                    <a href="{% url "login" %}">Kirjaudu sisään</a> kirjoittaaksesi kommentteja.
+                </p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

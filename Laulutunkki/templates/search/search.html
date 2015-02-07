@@ -1,0 +1,15 @@
+{% for song in songs|slice:":10" %}
+    <li><span class="glyphicon glyphicon-music"></span><a href="{% url 'song' song.pk %}"> {{ song.object.title }}</a></li>
+{% endfor %}
+
+{% for booklet in booklets|slice:":10" %}
+    <li><span class="glyphicon glyphicon-book"></span><a href="{% url 'booklet' booklet.pk %}"> {{ booklet.object.title }}</a></li>
+{% endfor %}
+
+{% if songs|length == 0 and booklets|length == 0 %}
+    <li>Ei hakutuloksia.</li>
+{% endif %}
+
+{% if songs|length > 10 or booklets|length > 10 %}
+    <li>...</li>
+{% endif %}

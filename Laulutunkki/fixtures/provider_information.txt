@@ -1,0 +1,7 @@
+Google:
+Key: 815255366038-os25ilbfdd0tqdcmk2ij6t2afqte5nh2.apps.googleusercontent.com
+Secret: WaqB_U_6nEemvfDRO3SiZxZT
+
+Facebook:
+Key: 468133319957655
+Secret: e15e0954d94221d84037ada5a3f63cf9

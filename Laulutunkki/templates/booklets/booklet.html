@@ -1,0 +1,91 @@
+{% extends 'base.html' %}{% load i18n %}
+
+{% block content %}
+    <!-- Booklet information -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {% if user.is_staff or user.id == booklet.author.id %}
+                <a href="{% url 'delete_booklet' booklet.pk %}">
+                    <span style="float: right; display: inline;" class="glyphicon glyphicon-trash"></span>
+                </a>
+            {% endif %}
+            <h3 class="panel-title">{{ booklet.title }}</h3>
+        </div>
+        <div class="panel-body">
+            <pre>
+                <div class="front_page_text">Etusivu teksti: {{booklet.front_page_text }}</div>
+                <div class="front_page_img">Kansikuvan URL: {{booklet.front_page_image}}</div>
+                <div class="songs">{% for page in pages %}Sivu {{page|floatformat|add:"1"}}:{% for song in page.songs.all %}
+    {{song.song}}{% endfor %}
+<br>{% endfor %}
+                </div>
+            </pre>
+            <a href="/get_booklet/{{ booklet.id }}">Lataa PDF</a>
+
+            <div class="created"><strong>Luotu:</strong> {{ booklet.created|date:'Y-m-d H:i' }} / {{ booklet.author.username }}</div>
+            {% with current=booklet %}                
+            {% if current.previous_version %}
+                </br>
+                Vanhemmat (3) versiot tästä läsystä:
+                <div> 
+                {% with current=current.previous_version %}
+                <a href="{% url 'booklet' current.pk %}"> {{ current.title}} ({{current.created|date}} by {{current.author.username}})</a></br>
+                {% if current.previous_version %}
+                    {% with current=current.previous_version %}
+                    <a href="{% url 'booklet' current.pk %}"> {{ current.title}} ({{current.created|date}} by {{current.author.username}})</a></br>
+                    {% if current.previous_version %}
+                        {% with current=current.previous_version %}
+                        <a href="{% url 'booklet' current.pk %}"> {{ current.title}} ({{current.created|date}} by {{current.author.username}})</a></br>
+                        {% endwith %}
+                    {% endif %}
+                    {% endwith %}
+                {% endif %}
+                {% endwith %}
+                </div>
+
+            {% endif %}
+            
+            {% endwith %}
+            {% if booklet.updated_version.all %}
+                </br>
+                Uudet versiot tästä läsystä:
+                <div>
+                    {% for newer in booklet.updated_version.all %}
+                    <a href="{% url 'booklet' newer.pk %}"> {{ newer.title}} ({{newer.created|date}} by {{newer.author.username}})</a></br>
+                    {% endfor %}
+                </div>
+                
+            {% endif %}
+            </br>
+            {% if user.is_authenticated %}
+                <a href="{% url 'edit_booklet' booklet.pk %}">   
+                {% if user == booklet.author %}
+                    <button type="button" class="btn btn-primary">Muokkaa läsyä</button>
+                {% else %}
+                    <button type="button" class="btn btn-primary">Kopioi läsy</button>
+                {% endif %}
+                </a>
+            {%endif%}
+
+            <br>
+            <br>
+            <!-- Facebook share link -->
+            <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=http://lasytunkki.herokuapp.com/booklet/{{ booklet.pk }}" target="_blank">
+                Jaa läsy Facebookissa!
+            </a> -->
+            <div class="fb-share-button" data-href="http://lasytunkki.herokuapp.com/booklet/{{ booklet.pk }}" data-type="button_count"></div>
+
+            <!-- Comments -->
+            <h4>Kommentit</h4>
+            {% load comments %}
+            {% render_comment_list for booklet %}
+            {% if user.is_authenticated %}
+                {% render_comment_form for booklet %}
+            {% else %}
+                <p>
+                    <a href="{% url "login" %}">Kirjaudu sisään</a> kirjoittaaksesi kommentteja.
+                </p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

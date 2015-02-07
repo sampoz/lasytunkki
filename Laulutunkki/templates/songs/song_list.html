@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block nav-song_list %}class="active"{% endblock %}
+
+{% block content %}
+    <!-- Create song -->
+    {% if user.is_authenticated %}
+        <p>
+        <a href="{% url 'create_song' %}">
+            <button type="button" class="btn btn-primary">Luo uusi laulu</button>
+        </a>
+        </p>
+    {% endif %}
+
+    <!-- Songs -->
+    <div class="panel-group">
+        {% for song in song_list.object_list %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {% if user.is_staff %}
+                        <a href="{% url 'delete_song' song.pk %}">
+                            <span style="float: right; display: inline;" class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    {% endif %}
+                    <h3 class="panel-title">
+                        <a href="{% url 'song' song.pk %}">
+                            {{ song.title }}
+                        </a>
+                    </h3>
+                </div>
+            </div>
+        {% empty %}
+            <p>
+                Tietokannasta ei löytynyt yhtään laulua.
+            </p>
+        {% endfor %}
+    </div>
+
+    <!-- Next/Prev page links  -->
+    {% if song_list.object_list and song_list.paginator.num_pages > 1 %}
+        <ul class="pagination">
+            {% if song_list.has_previous %}
+                <li><a href="?page={{ song_list.previous_page_number }}">&laquo;</a></li>
+            {% else %}
+                <li class="disabled"><a href="#">&laquo;</a></li>
+            {% endif %}
+
+            {% for i in song_list.paginator.page_range %}
+                {% if i == song_list.number  %}
+                    <li class="active"><a href="#">{{ i }}<span class="sr-only">(current)</span></a></li>
+                {% else %}
+                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if song_list.has_next %}
+                <li><a href="?page={{ song_list.next_page_number }}">&raquo;</a></li>
+            {% else %}
+                <li class="disabled"><a href="#">&raquo;</a></li>
+            {% endif %}
+        </ul>
+    {% endif %}
+{% endblock %}

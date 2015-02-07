@@ -1,0 +1,5 @@
+{{ object.title }}
+{{ object.category }}
+{{ object.lyrics }}
+{{ object.extra_verses }}
+{{ object.author.username }}

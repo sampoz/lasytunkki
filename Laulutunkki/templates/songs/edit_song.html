@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block nav-song_list %}class="active"{% endblock %}
+
+{% block content %}
+    <div class="main">
+        <form role="form" action="{% url "edit_song" id %}" method="post">
+            {% load crispy_forms_tags %}
+            {% crispy form %}
+            <input type="submit" value="Tallenna" class="btn btn-primary">
+        </form>
+    </div>
+{% endblock %}

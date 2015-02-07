@@ -1,0 +1,10 @@
+Django==1.6.1
+django-crispy-forms==1.4.0
+django-fluent-comments==0.9.2
+South==0.8.4
+Whoosh==2.5.6
+django-haystack==2.1.0
+django-all-access==0.5.1
+PIL==1.1.7
+psycopg2==2.4.5
+dj-database-url==0.2.2

@@ -1,0 +1,711 @@
+[
+    {
+        "pk": 1,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "permission",
+            "name": "permission",
+            "app_label": "auth"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "group",
+            "name": "group",
+            "app_label": "auth"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "user",
+            "name": "user",
+            "app_label": "auth"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "logentry",
+            "name": "log entry",
+            "app_label": "admin"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "contenttype",
+            "name": "content type",
+            "app_label": "contenttypes"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "session",
+            "name": "session",
+            "app_label": "sessions"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "site",
+            "name": "site",
+            "app_label": "sites"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "comment",
+            "name": "comment",
+            "app_label": "comments"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "commentflag",
+            "name": "comment flag",
+            "app_label": "comments"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "song",
+            "name": "song",
+            "app_label": "Laulutunkki"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "category",
+            "name": "category",
+            "app_label": "Laulutunkki"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "booklet",
+            "name": "booklet",
+            "app_label": "Laulutunkki"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "bookletpage",
+            "name": "booklet page",
+            "app_label": "Laulutunkki"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "bookletsong",
+            "name": "booklet song",
+            "app_label": "Laulutunkki"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "event",
+            "name": "event",
+            "app_label": "Laulutunkki"
+        }
+    },
+    {
+        "pk": "dvl7zeevagwakvit3om74r77i7457k15",
+        "model": "sessions.session",
+        "fields": {
+            "expire_date": "2014-01-27T23:44:12.134Z",
+            "session_data": "NjI1ZGY0ZDI5MDUwOTllNWRlODhkMWQxZmE0MmFhOWIwYjQ1MWNhZTp7fQ=="
+        }
+    },
+    {
+        "pk": 1,
+        "model": "sites.site",
+        "fields": {
+            "domain": "example.com",
+            "name": "example.com"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_permission",
+            "name": "Can add permission",
+            "content_type": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_permission",
+            "name": "Can change permission",
+            "content_type": 1
+        }
+    },
+    {
+        "pk": 3,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_permission",
+            "name": "Can delete permission",
+            "content_type": 1
+        }
+    },
+    {
+        "pk": 4,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_group",
+            "name": "Can add group",
+            "content_type": 2
+        }
+    },
+    {
+        "pk": 5,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_group",
+            "name": "Can change group",
+            "content_type": 2
+        }
+    },
+    {
+        "pk": 6,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_group",
+            "name": "Can delete group",
+            "content_type": 2
+        }
+    },
+    {
+        "pk": 7,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_user",
+            "name": "Can add user",
+            "content_type": 3
+        }
+    },
+    {
+        "pk": 8,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_user",
+            "name": "Can change user",
+            "content_type": 3
+        }
+    },
+    {
+        "pk": 9,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_user",
+            "name": "Can delete user",
+            "content_type": 3
+        }
+    },
+    {
+        "pk": 10,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_logentry",
+            "name": "Can add log entry",
+            "content_type": 4
+        }
+    },
+    {
+        "pk": 11,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_logentry",
+            "name": "Can change log entry",
+            "content_type": 4
+        }
+    },
+    {
+        "pk": 12,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_logentry",
+            "name": "Can delete log entry",
+            "content_type": 4
+        }
+    },
+    {
+        "pk": 13,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_contenttype",
+            "name": "Can add content type",
+            "content_type": 5
+        }
+    },
+    {
+        "pk": 14,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_contenttype",
+            "name": "Can change content type",
+            "content_type": 5
+        }
+    },
+    {
+        "pk": 15,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_contenttype",
+            "name": "Can delete content type",
+            "content_type": 5
+        }
+    },
+    {
+        "pk": 16,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_session",
+            "name": "Can add session",
+            "content_type": 6
+        }
+    },
+    {
+        "pk": 17,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_session",
+            "name": "Can change session",
+            "content_type": 6
+        }
+    },
+    {
+        "pk": 18,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_session",
+            "name": "Can delete session",
+            "content_type": 6
+        }
+    },
+    {
+        "pk": 19,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_site",
+            "name": "Can add site",
+            "content_type": 7
+        }
+    },
+    {
+        "pk": 20,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_site",
+            "name": "Can change site",
+            "content_type": 7
+        }
+    },
+    {
+        "pk": 21,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_site",
+            "name": "Can delete site",
+            "content_type": 7
+        }
+    },
+    {
+        "pk": 22,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_comment",
+            "name": "Can add comment",
+            "content_type": 8
+        }
+    },
+    {
+        "pk": 23,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_comment",
+            "name": "Can change comment",
+            "content_type": 8
+        }
+    },
+    {
+        "pk": 24,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_comment",
+            "name": "Can delete comment",
+            "content_type": 8
+        }
+    },
+    {
+        "pk": 25,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "can_moderate",
+            "name": "Can moderate comments",
+            "content_type": 8
+        }
+    },
+    {
+        "pk": 26,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_commentflag",
+            "name": "Can add comment flag",
+            "content_type": 9
+        }
+    },
+    {
+        "pk": 27,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_commentflag",
+            "name": "Can change comment flag",
+            "content_type": 9
+        }
+    },
+    {
+        "pk": 28,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_commentflag",
+            "name": "Can delete comment flag",
+            "content_type": 9
+        }
+    },
+    {
+        "pk": 29,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_song",
+            "name": "Can add song",
+            "content_type": 10
+        }
+    },
+    {
+        "pk": 30,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_song",
+            "name": "Can change song",
+            "content_type": 10
+        }
+    },
+    {
+        "pk": 31,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_song",
+            "name": "Can delete song",
+            "content_type": 10
+        }
+    },
+    {
+        "pk": 32,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_category",
+            "name": "Can add category",
+            "content_type": 11
+        }
+    },
+    {
+        "pk": 33,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_category",
+            "name": "Can change category",
+            "content_type": 11
+        }
+    },
+    {
+        "pk": 34,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_category",
+            "name": "Can delete category",
+            "content_type": 11
+        }
+    },
+    {
+        "pk": 35,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_booklet",
+            "name": "Can add booklet",
+            "content_type": 12
+        }
+    },
+    {
+        "pk": 36,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_booklet",
+            "name": "Can change booklet",
+            "content_type": 12
+        }
+    },
+    {
+        "pk": 37,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_booklet",
+            "name": "Can delete booklet",
+            "content_type": 12
+        }
+    },
+    {
+        "pk": 38,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_bookletpage",
+            "name": "Can add booklet page",
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 39,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_bookletpage",
+            "name": "Can change booklet page",
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 40,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_bookletpage",
+            "name": "Can delete booklet page",
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 41,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_bookletsong",
+            "name": "Can add booklet song",
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 42,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_bookletsong",
+            "name": "Can change booklet song",
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 43,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_bookletsong",
+            "name": "Can delete booklet song",
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 44,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_event",
+            "name": "Can add event",
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 45,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_event",
+            "name": "Can change event",
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 46,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_event",
+            "name": "Can delete event",
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 1,
+        "model": "auth.user",
+        "fields": {
+            "username": "user",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": true,
+            "is_staff": true,
+            "last_login": "2014-01-13T23:44:07.060Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "pbkdf2_sha256$12000$LaIwNPLXSfdD$Xyxqp1+wQwEzv5qUka746MgybucaCsAPusKb3wwVtog=",
+            "email": "user@lasytunkki.fi",
+            "date_joined": "2014-01-13T22:46:38.679Z"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "comments.comment",
+        "fields": {
+            "comment": "Buranamainoksestakin tuttu s\u00e4vel voi olla seuraavana aamuna varsin relevantti.",
+            "user_url": "",
+            "submit_date": "2014-01-13T22:51:26.453Z",
+            "ip_address": "127.0.0.1",
+            "object_pk": "3",
+            "site": 1,
+            "is_removed": false,
+            "user": 1,
+            "content_type": 10,
+            "is_public": true,
+            "user_name": "",
+            "user_email": ""
+        }
+    },
+    {
+        "pk": 2,
+        "model": "comments.comment",
+        "fields": {
+            "comment": "Testataanpas t\u00e4t\u00e4kin kommentointia.",
+            "user_url": "",
+            "submit_date": "2014-01-13T22:53:38.102Z",
+            "ip_address": "127.0.0.1",
+            "object_pk": "2",
+            "site": 1,
+            "is_removed": false,
+            "user": 1,
+            "content_type": 10,
+            "is_public": true,
+            "user_name": "",
+            "user_email": ""
+        }
+    },
+    {
+        "pk": 1,
+        "model": "Laulutunkki.song",
+        "fields": {
+            "category": "Snapsilaulut",
+            "author": 1,
+            "lyrics": ":,: Niin baarin tytt\u00f6nen sinulle laulan, kuin omalle pullolleni. :,:\r\n\r\nJos olis viinaa niin kuin on mieli, niin joisin viel\u00e4 yhdet!",
+            "title": "Baarin tytt\u00f6nen",
+            "other_info": "",
+            "created": "2014-01-13T22:49:00.817Z",
+            "extra_verses": "",
+            "melody": "Niin min\u00e4 neitonen",
+            "example": "http://www.youtube.com/watch?v=MLvTWLrc6Q0"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "Laulutunkki.song",
+        "fields": {
+            "category": "Snapsilaulut",
+            "author": 1,
+            "lyrics": "Ottaisin min\u00e4 Karhuviinaa,\r\njos vain pullon saisin.\r\n:;: Pieneen kurkkuun kaataisin\r\nja sitten oksentaisin. :;:\r\n\r\nTiu tau, tiu tau tili tali tittan,\r\njuodaan rommia kolalla.\r\n:;: Sitten kun ollaan koko pullo juotu,\r\nniin ollaan perseet olalla. :;:\r\n\r\nVaan ei se taitais meid\u00e4n \u00e4iti\r\nKarhuviinaa ottaa.\r\n:;: Eih\u00e4n se edes usko, ett\u00e4\r\nKarhuviina on totta. :;:\r\n\r\nTiu tau, tiu tau \u2026\r\n",
+            "title": "Karhuviinaa",
+            "other_info": "",
+            "created": "2014-01-13T22:50:06.558Z",
+            "extra_verses": "Syksyn tullen sieni\u00e4 kasvaa\r\nvarpaanv\u00e4leiss\u00e4mme.\r\nEik\u00e4 me sukkia vaihdeta kuin\r\nkorkeintaan kesken\u00e4mme.\r\nEik\u00e4 me sukkia vaihdeta,\r\n- ei ainakaan kesken\u00e4mme!\r\n\r\nTiu tau, tiu tau \u2026",
+            "melody": "M\u00f6rri-M\u00f6ykky",
+            "example": "http://www.youtube.com/watch?v=TkgX_AYqyk4"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "Laulutunkki.song",
+        "fields": {
+            "category": "Viinilaulut",
+            "author": 1,
+            "lyrics": "Mielt\u00e4 piinaa t\u00e4m\u00e4 vaiva taas,\r\nhei kuunnelkaas,\r\non mieli maas.\r\nEn viinaa tahdo kurkkuun kaataa vaan,\r\nm\u00e4 siit\u00e4 saan\r\nallergiaa\r\nM\u00e4 tahdonkin, nyt laseihin sen aromin ja\r\nv\u00e4rinkin\r\nSuuni huokaa mulle tuokaa hei\r\nvaikk' Sorbus -EI!\r\nvaan Chardonnay.",
+            "title": "Viinin kaipuu",
+            "other_info": "",
+            "created": "2014-01-13T22:51:21.536Z",
+            "extra_verses": "http://www.youtube.com/watch?v=_mVW8tgGY_w",
+            "melody": "F\u00fcr Elise",
+            "example": "http://www.youtube.com/watch?v=_mVW8tgGY_w"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "Laulutunkki.song",
+        "fields": {
+            "category": "Serenadit",
+            "author": 1,
+            "lyrics": ":,: Niin min\u00e4, neitonen sinulle laulan\r\nkuin omalle kullalleni.:,:\r\n:,: Jos olis valtaa niin kuin on mieli,\r\nniin ottaisin omakseni.:,:\r\n\r\n:,: Kullalleni min\u00e4 laulelen\r\nja kellek\u00e4s min\u00e4 muille.:,:\r\n:,: En min\u00e4 laula kallioille\r\nenk\u00e4 mets\u00e4n puille.:,:",
+            "title": "Niin min\u00e4 neitonen",
+            "other_info": "Lauletaan polvelta.",
+            "created": "2014-01-13T22:57:57.454Z",
+            "extra_verses": "",
+            "melody": "Niin min\u00e4 neitonen",
+            "example": "http://www.youtube.com/watch?v=MLvTWLrc6Q0"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "Laulutunkki.song",
+        "fields": {
+            "category": "Avec laulut",
+            "author": 1,
+            "lyrics": "Katonrajass\u2019 kulkee hauki,\r\npahaa taitaa tarkoittaa!\r\n:,: Kierr\u00e4 pullon korkki auki,\r\nryyppy pedon karkoittaa. :,:\r\n\r\nP\u00f6yd\u00e4n alta ry\u00f6mii lisko,\r\nilkein silmin tuijottaa.\r\n:,: Ryyppy toinen naamaas kisko,\r\naistiharha l\u00e4hd\u00f6n saa. :,:\r\n\r\nVierustuolill\u2019 istuu hylje,\r\npyrst\u00f6 l\u00e4psii palleaas\u2019.\r\n:,: Kunhan vain et lasiin sylje,\r\nmursu daamiks\u2019 muuttuu taas. :,:\r\n\r\nP\u00f6yd\u00e4n p\u00e4\u00e4ll\u00e4 ammuu nauta,\r\nmaitoo koittaa tyrkytt\u00e4\u00e4.\r\n:,: Ryyppy nelj\u00e4s, jumalauta,\r\nmaitohapot myrkytt\u00e4\u00e4. :,:",
+            "title": "Hauki ja muita ihmeit\u00e4",
+            "other_info": "",
+            "created": "2014-01-13T23:00:39.773Z",
+            "extra_verses": "",
+            "melody": "",
+            "example": ""
+        }
+    },
+    {
+        "pk": 6,
+        "model": "Laulutunkki.song",
+        "fields": {
+            "category": "Krapulalaulut",
+            "author": 1,
+            "lyrics": "Ehk\u00e4 huomenna on\r\nolomme onneton\r\n-- koko maailma p\u00e4\u00e4llemme kaatuu.\r\nSiit\u00e4 viis veisaamme,\r\nhuolet pois heit\u00e4mme\r\n-- ylihuominen ajallansa saapuu.\r\n\r\nMe juomme, se anteeksi suokaa,\r\nehk\u00e4 huomenna maksa huokaa,\r\n:,: mutta nyt meill\u00e4 on\r\njano sammumaton,\r\nJaloviinaa siis p\u00f6yt\u00e4\u00e4mme tuokaa! :,:",
+            "title": "Ehk\u00e4 huomenna",
+            "other_info": "Ilmeisesti t\u00e4m\u00e4 on alunperin Otaniemest\u00e4, mutta on jotakin kautta p\u00e4\u00e4tynyt Oulun vakiolaulamistoon. http://sitsi.ayy.fi/sitsilaulukilpailu2004_laulut.php",
+            "created": "2014-01-13T23:18:05.161Z",
+            "extra_verses": "",
+            "melody": "Esli Zavtra Voina",
+            "example": "http://youtu.be/DB7Sdxt7A30"
+        }
+    }
+]

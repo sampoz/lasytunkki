@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block nav-login %}class="active"{% endblock %}
+
+{% block content %}
+    <h2 class="form-signin-heading">Kirjaudu sisään</h2>
+
+    <p>
+        Jos sinulla ei vielä ole tunnuksia, <a href="{% url "register" %}">rekisteröidy</a>. Rekisteröityneet käyttäjät
+        voivat lisätä uusia lauluja ja läsyjä sekä muokata tietokannassa olevia lauluja ja läsyjä.
+    </p>
+
+    {% load crispy_forms_tags %}
+    {% crispy form %}
+
+    <p>
+        <br />
+        <a href="{% url "password_reset" %}">Unohditko salasanasi?</a>
+    </p>
+
+    <p>
+        Voit myös kirjautua olemassa olevilla <a href="{% url "allaccess-login" "google" %}">Google</a> tai <a href="{% url "allaccess-login" "facebook" %}">Facebook</a> -tunnuksillasi.
+    </p>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block nav-index %}class="active"{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1>Hae laulua tai läsyä</h1>
+
+        <p class="lead">
+            Hae laulua kirjoittamalla hakukenttään esimerkiksi laulun nimi tai pätkä laulun säkeistöstä. Läsyjä voit
+            hakea esimerkiksi tapahtuman nimellä, jossa läsyä käytettiin.
+        </p>
+
+        <form role="form" action="#" method="post">{% csrf_token %}
+            <div class="input-group">
+                <input type="text" name='query' id="search" class="form-control input-lg" />
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+        </form>
+
+        <ul id="search_results" class="list-unstyled" align="left">
+        {# Will get populated by AJAX #}
+        </ul>
+    </div>
+
+    <div class="row marketing">
+        <div class="row-lg-6">
+            <h4>Tervetuloa läsytunkkiin</h4>
+            <p>
+                Läsytunkki on TiK-opiskelijoiden Web Software Development -kurssilla kehitetty projekti. Läsytunkki
+                yhdistää <i>lauluwikin</i> toiminnallisuuden läsyjen generointiominaisuuksiin. Läsytunkin avulla voit
+                koostaa läsyn vapaavalintaisista lauluista. Ohjelma generoi lauluista tulostamista vaille valmiin
+                pdf-tiedoston.
+            </p>
+            <p>
+                Laulujen ja läsyjen selaaminen ei vaadi rekisteröitymistä. Laulujen ja läsyjen luominen, olemassa olevien
+                läsyjen ja laulujen muokkaaminen sekä kommentointi vaativat kuitenkin yksinkertaisen rekisteröintiprosessin
+                suorittamisen.
+            </p>
+        </div>
+    </div>
+{% endblock %}

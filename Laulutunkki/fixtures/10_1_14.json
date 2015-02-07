@@ -1,0 +1,17 @@
+[
+    {
+        "pk": 1,
+        "model": "Laulutunkki.song",
+        "fields": {
+            "category": "Olutlaulut",
+            "author": 1,
+            "lyrics": "Aina kun iltaisin m\u00e4 opiskelen,\r\nmun mieli tekee niin - kaljaa.\r\nToisien kanssa milloin oleskelen,\r\nm\u00e4 silloin tahdon niin - kaljaa.\r\nSiihen himoon auta eiv\u00e4t vissyt eik\u00e4 limut.\r\nPienen lohdun tuoda voivat typsyt sek\u00e4 pimut.\r\n\r\nSuostu m\u00e4 en...\r\nnyt tyytym\u00e4\u00e4n limppariin,\r\nkun kerran kumota voin\r\npaljon parempaakin: se on\r\n- kaljaa - saunassa kiskotaan\r\n- kaljaa - juomasta nautitaan\r\n- kaljaa - lis\u00e4\u00e4 me aina halutaan\r\n\r\nRantasaunalle siis polkuni k\u00e4y\r\nja reppu kilisee - kaljaa.\r\nSauna vaan kuumaksi ja\r\nkassista kohta esiin otetaan - kaljaa.\r\nMut miksi t\u00e4ytyy loppua nyt t\u00e4m\u00e4n ihanuuden?\r\nTahdon pullon paremman, t\u00e4yden, ihkauuden!\r\n\r\nMiksi on niin...\r\nkas pullohan tyhjenee,\r\nkun sit\u00e4 illan mittaan\r\nn\u00e4in naukkailee: se on\r\n- kaljaa - lis\u00e4\u00e4 me tahdotaan\r\n- kaljaa - tiskilt\u00e4 noudetaan\r\n- kaljaa - juoda me aina halutaan",
+            "title": "Kaljaa",
+            "other_info": "Tarttui mukaan Turbulenssista 2011. Muokkasin sanat otaniemel\u00e4isiksi muuttamalla Teekkaritalon Rantasaunaksi.",
+            "created": "2014-01-10T15:42:19.955Z",
+            "extra_verses": "",
+            "melody": "Downtown",
+            "example": "http://youtu.be/FKCnHWas3HQ"
+        }
+    }
+]

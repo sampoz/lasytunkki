@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block nav-booklet_list %}class="active"{% endblock %}
+
+{% block content %}
+    <!-- Create booklet -->
+    {% if user.is_authenticated %}
+        <p>
+            <a href="{% url 'create_booklet' %}">
+                <button type="button" class="btn btn-primary">Luo uusi läsy</button>
+            </a>
+        </p>
+    {% endif %}
+
+    <!-- Booklets -->
+    {% if booklet_list.empty %}
+    {% endif %}
+    <div class="panel-group">
+        {% for booklet in booklet_list.object_list %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {% if user.is_staff or user.id == booklet.author.id %}
+                        <a href="{% url 'delete_booklet' booklet.pk %}">
+                            <span style="float: right; display: inline;" class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    {% endif %}
+                    <h3 class="panel-title">
+                        <a href="{% url 'booklet' booklet.pk %}">
+                            {{ booklet.title }}
+                        </a>
+                    </h3>
+                    
+                </div>
+            </div>
+        {% empty %}
+            <p>
+                Tietokannasta ei löytynyt yhtään läsyä.
+            </p>
+        {% endfor %}
+    </div>
+
+    <!-- Next/Prev page links  -->
+    {% if booklet_list.object_list and booklet_list.paginator.num_pages > 1 %}
+        <ul class="pagination">
+            {% if booklet_list.has_previous %}
+                <li><a href="?page={{ booklet_list.previous_page_number }}">&laquo;</a></li>
+            {% else %}
+                <li class="disabled"><a href="#">&laquo;</a></li>
+            {% endif %}
+
+            {% for i in booklet_list.paginator.page_range %}
+                {% if i == booklet_list.number  %}
+                    <li class="active"><a href="#">{{ i }}<span class="sr-only">(current)</span></a></li>
+                {% else %}
+                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if booklet_list.has_next %}
+                <li><a href="?page={{ booklet_list.next_page_number }}">&raquo;</a></li>
+            {% else %}
+                <li class="disabled"><a href="#">&raquo;</a></li>
+            {% endif %}
+        </ul>
+    {% endif %}
+{% endblock %}

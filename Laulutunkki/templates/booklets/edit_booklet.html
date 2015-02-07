@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block nav-booklet_list %}class="active"{% endblock %}
+{% block script %}
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/create_booklet.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/select2_locale_fi.js"></script>
+
+{% endblock %}
+
+{% block content %}
+{% csrf_token %}
+    <h3>Muokkaa läsyä</h3>
+    <div class="main container">
+        <div class="row">
+            <div type="hidden" value="{{booklet.id}}" id="booklet_id"></div>
+            <!-- TITLE FIELD -->
+            <div id="div_id_title" class="form-group">
+                <label for="id_title" class="control-label  requiredField">
+                Läsyn nimi<span class="asteriskField">*</span>
+                </label>
+                <div class="controls ">
+                    <input class="textinput textInput form-control" id="id_title" maxlength="120" name="title" type="text" value="{{booklet.title}}">
+                </div>
+            </div>
+
+            <!-- FRONT PAGE TEXT -->
+            <div id="div_id_front_page_text" class="form-group">
+                <label for="id_front_page_text" class="control-label  requiredField">
+                Läsyn etusivun teksti (hyväksyy Tex-formaattia)<span class="asteriskField"></span>
+                </label>
+                <div class="controls ">
+                    <input class="textinput textInput form-control" id="id_front_page_text" maxlength="120" name="front_page_text" type="text" value="{{booklet.front_page_text}}">
+                </div>
+            </div>
+
+            <!-- FRONT PAGE IMAGE URL -->
+            <div id="div_id_front_page_image_url" class="form-group">
+                <label for="id_front_page_image_url" class="control-label  requiredField">
+                Linkki läsyn etusivu kuvaan (oltava muodossa .jpg, suurin sallittu koko 10mb)<span class="asteriskField"></span>
+                </label>
+                <div class="controls ">
+                    <input class="textinput textInput form-control" id="id_front_page_image_url" maxlength="120" name="front_page_image_url" type="text" value="{{booklet.front_page_image}}">
+                </div>
+            </div>
+            
+            <!-- FLICKR SEARCH TOGGLE -->
+            <div class="form-group">
+              <a href="#" id="flickr_toggle">Hae läsyn etusivun kuva Flickrista</a>
+            </div>
+            
+            <!-- FLICKR IMAGE SEARCH -->
+            <div id="id_flickr" class="well" style="display:none;">
+              <div id="div_id_flickr" class="form-group">
+                  <label for="flickr_search">Kirjoita hakusana
+                  </label>
+                  <div class="controls">
+                    <input class="textinput textInput form-control" type="text" id="flickr_search">
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="Hae" onclick="searchFunction()">
+                  </div>
+              </div>
+              <div id="images">
+                <div id="thumbnailCarousel" class="carousel slide">
+                  <div id="thumbnailContainer" class="carousel-inner"></div>
+                  <a style="display: none;" id="leftCarouselControl" class="left carousel-control" href="#thumbnailCarousel" data-slide="prev">&lt;</a>
+                  <a style="display: none;" id="rightCarouselControl" class="right carousel-control" href="#thumbnailCarousel" data-slide="next">&gt;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- SONG LIST -->
+            <div id="div_id_search" class="form-group">
+                <label for="id_search" class="control-label  requiredField">
+                Läsyn tulevat laulut<span class="asteriskField">*</span>
+                </label>
+                <div class="controls ">
+                    <input multiple class="textinput textInput form-control select2-input select2-default" type="hidden" id="id_search" style="">
+                </div>
+            </div>
+
+        </div>
+        <input type="submit" value="Tallenna" class="btn btn-primary" id="choose">
+
+    </div>
+
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            var a = [{% for song in songs %}
+                {id: {{song.pk}}, text: '{{song}}'},
+                {% endfor %}];
+            $("#id_search").select2("data", a);
+        })
+    </script>
+    
+{% endblock %}
